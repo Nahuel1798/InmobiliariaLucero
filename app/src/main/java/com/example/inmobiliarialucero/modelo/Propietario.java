@@ -3,81 +3,81 @@ package com.example.inmobiliarialucero.modelo;
 import java.io.Serializable;
 
 public class Propietario implements Serializable {
-    private int IdPropietario;
-    private String Nombre;
-    private String Apellido;
-    private String DNI;
-    private String Telefono;
-    private String Email;
-    private String Clave;
+    private int idPropietario;
+    private String nombre;
+    private String apellido;
+    private String dni;
+    private String telefono;
+    private String email;
+    private String clave;
 
     public Propietario() {
 
     }
 
-    public Propietario(int idPropietario, String nombre, String apellido, String DNI, String telefono, String email, String clave) {
-        IdPropietario = idPropietario;
-        Nombre = nombre;
-        Apellido = apellido;
-        this.DNI = DNI;
-        Telefono = telefono;
-        Email = email;
-        Clave = clave;
+    public Propietario(int idPropietario, String nombre, String apellido, String dni, String telefono, String email, String clave) {
+        this.idPropietario = idPropietario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.email = email;
+        this.clave = clave;
     }
 
     public int getIdPropietario() {
-        return IdPropietario;
+        return idPropietario;
     }
 
     public void setIdPropietario(int idPropietario) {
-        IdPropietario = idPropietario;
+        this.idPropietario = idPropietario;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
     public void setApellido(String apellido) {
-        Apellido = apellido;
+        this.apellido = apellido;
     }
 
-    public String getDNI() {
-        return DNI;
+    public String getDni() {
+        return dni;
     }
 
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getTelefono() {
-        return Telefono;
+        return telefono;
     }
 
     public void setTelefono(String telefono) {
-        Telefono = telefono;
+        this.telefono = telefono;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getClave() {
-        return Clave;
+        return clave;
     }
 
     public void setClave(String clave) {
-        Clave = clave;
+        this.clave = clave;
     }
 }

@@ -28,7 +28,7 @@ public class ContratoFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textView = binding.textContrato;
-        inicioViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //inicioViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

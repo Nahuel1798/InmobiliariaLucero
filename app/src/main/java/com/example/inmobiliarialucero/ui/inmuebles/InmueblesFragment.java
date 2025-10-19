@@ -27,7 +27,7 @@ public class InmueblesFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textView = binding.textInmueble;
-        inicioViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //inicioViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
