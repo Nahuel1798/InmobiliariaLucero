@@ -3,10 +3,16 @@ package com.example.inmobiliarialucero.request;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.inmobiliarialucero.modelo.Contrato;
+import com.example.inmobiliarialucero.modelo.Inmueble;
 import com.example.inmobiliarialucero.modelo.Propietario;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.List;
+
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -15,11 +21,13 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Part;
 
 public class ApiClient {
-    private static final String BASE_URL="https://inmobiliariaulp-amb5hwfqaraweyga.canadacentral-01.azurewebsites.net/";
+    public static final String BASE_URL="https://inmobiliariaulp-amb5hwfqaraweyga.canadacentral-01.azurewebsites.net/";
 
     public static InmoServicio getInmoServicio() {
         Gson gson = new GsonBuilder().setLenient().create();
@@ -41,6 +49,27 @@ public class ApiClient {
 
         @PUT("api/Propietarios/actualizar")
         Call<Propietario> actualizarProp(@Header("Authorization") String token, @Body Propietario p);
+
+        @GET("/api/Inmuebles")
+        Call<List<Inmueble>> getInmuebles(@Header("Authorization") String token);
+
+        @PUT("api/Inmuebles/actualizar")
+        Call<Inmueble> actualizarInmueble(@Header("Authorization") String token, @Body Inmueble inmueble);
+        @Multipart
+        @POST("api/Inmuebles/cargar")
+        Call<Inmueble> CargarInmueble(@Header("Authorization")String token,
+                                      @Part MultipartBody.Part imagen,
+                                      @Part("inmueble") RequestBody inmuebleBody);
+
+        @GET("/api/Inmuebles/GetContratoVigente")
+        Call<List<Inmueble>> InmueblesVigentes(@Header("Authorization") String token);
+
+        @GET("/api/Inmuebles/{id}")
+        Call<Inmueble> ContratoPorInmueble(@Header("Authorization") String token);
+
+        @GET("/api/pagos/contrato/{id}")
+        Call<List<Contrato>> PagosPorContrato(@Header("Authorization") String token);
+
     }
 
     public static void guardartoken(Context context, String token) {

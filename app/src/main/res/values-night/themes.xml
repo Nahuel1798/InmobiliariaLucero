@@ -1,16 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.InmobiliariaLucero" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
+        <item name="colorPrimary">@color/azul_electrico_claro</item>
+        <item name="colorPrimaryVariant">@color/azul_electrico</item>
+        <item name="colorOnPrimary">@color/black</item> <!-- Texto oscuro sobre el azul claro -->
+
+        <!-- Colores secundarios (acento) -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+        <!-- Color de fondo para el modo oscuro -->
+        <item name="android:windowBackground">#121212</item> <!-- Un gris muy oscuro estándar -->
+
+        <!-- Color del texto principal sobre el fondo oscuro -->
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
 </resources>

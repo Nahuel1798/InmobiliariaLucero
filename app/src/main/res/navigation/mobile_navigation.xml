@@ -27,17 +27,55 @@
         android:id="@+id/nav_contrato"
         android:name="com.example.inmobiliarialucero.ui.contrato.ContratoFragment"
         android:label="@string/menu_contrato"
-        tools:layout="@layout/fragment_contrato" />"
+        tools:layout="@layout/fragment_contrato" >
+        <action
+            android:id="@+id/action_nav_contrato_to_contratoPorInmuebleFragment"
+            app:destination="@id/contratoPorInmuebleFragment" />
+    </fragment>"
 
     <fragment
         android:id="@+id/nav_inmuebles"
         android:name="com.example.inmobiliarialucero.ui.inmuebles.InmueblesFragment"
         android:label="@string/menu_inmuebles"
-        tools:layout="@layout/fragment_inmueble" />
+        tools:layout="@layout/fragment_inmueble" >
+        <action
+            android:id="@+id/action_nav_inmuebles_to_detalleInmuebleFragment"
+            app:destination="@id/detalleInmuebleFragment" />
+        <action
+            android:id="@+id/action_nav_inmuebles_to_crearInmuebleFragment"
+            app:destination="@id/crearInmuebleFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_inquilinos"
         android:name="com.example.inmobiliarialucero.ui.inquilinos.InquilinosFragment"
         android:label="@string/menu_inquilinos"
         tools:layout="@layout/fragment_inquilinos"/>
+    <fragment
+        android:id="@+id/detalleInmuebleFragment"
+        android:name="com.example.inmobiliarialucero.ui.inmuebles.DetalleInmuebleFragment"
+        android:label="fragment_detalle_inmueble"
+        tools:layout="@layout/fragment_detalle_inmueble" >
+        <action
+            android:id="@+id/action_detalleInmuebleFragment_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearInmuebleFragment"
+        android:name="com.example.inmobiliarialucero.ui.inmuebles.CrearInmuebleFragment"
+        android:label="fragment_crear_inmueble"
+        tools:layout="@layout/fragment_crear_inmueble" >
+        <action
+            android:id="@+id/action_crearInmuebleFragment_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+    </fragment>
+    <fragment
+        android:id="@+id/contratoPorInmuebleFragment"
+        android:name="com.example.inmobiliarialucero.ui.contrato.ContratoPorInmuebleFragment"
+        android:label="fragment_contrato_por_inmueble"
+        tools:layout="@layout/fragment_contrato_por_inmueble" >
+        <action
+            android:id="@+id/action_contratoPorInmuebleFragment_to_nav_contrato"
+            app:destination="@id/nav_contrato" />
+    </fragment>
 </navigation>
